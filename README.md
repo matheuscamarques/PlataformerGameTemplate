@@ -18,3 +18,4 @@ Este template contém documentação levantada e esqueletos mínimos para inicia
 
 ## Próximos passos
 Preencher implementações específicas, adicionar Makefile e testes.
+# PlataformerGameTemplate
