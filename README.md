@@ -1,6 +1,10 @@
 # PlataformerGameTemplate
 
 Schema cru do ecossistema plataformgame.
+<img width="658" height="703" alt="image" src="https://github.com/user-attachments/assets/7f1430cd-e2af-4de3-a453-1790140d388e" />
+
+# Contato
+```matheuscamarques@gmail.com```
 
 ## Estrutura
 - `docs/design-system/` — tokens, palette ASCII, sprites
