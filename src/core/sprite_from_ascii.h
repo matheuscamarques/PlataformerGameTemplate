@@ -1,0 +1,32 @@
+#pragma once
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Image.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include "core/BodyPart.h"
+
+namespace core {
+struct PaletteEntry {
+    char ch;
+    sf::Color color;
+    BodyPartId part = BodyPartId::None;
+};
+
+inline sf::Texture makeSprite(const char* const* rows, int w, int h,
+                               const PaletteEntry* pal, std::size_t palCount) {
+    sf::Image img;
+    img.create(w, h, sf::Color::Transparent);
+    for (int y=0; y<h; ++y) {
+        const char* row = rows[y];
+        for (int x=0; x<w; ++x) {
+            char ch = row[x];
+            for (std::size_t i=0; i<palCount; ++i) {
+                if (pal[i].ch == ch) { img.setPixel(x,y,pal[i].color); break; }
+            }
+        }
+    }
+    sf::Texture t;
+    t.loadFromImage(img);
+    t.setSmooth(false);
+    return t;
+}
+}
